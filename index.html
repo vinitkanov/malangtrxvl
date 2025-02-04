@@ -1,0 +1,229 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Malang Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="relative h-screen">
+    <img
+      alt="Hero background"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+      height="1080"
+      src="assets/img/bg-hero.jpg"
+      width="1920"
+    />
+    <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+    <header class="flex justify-between items-center p-5 fixed w-full">
+      <img
+        src="assets/img/logo.svg"
+        <img
+        src="assets/img/logo.svg"
+        class="mr-auto"
+      />
+      <nav class="ml-auto text-white space-x-6 gap-5 flex">
+        <a class="hover:underline text-white" href="#"> Home </a>
+        <a class="hover:underline text-white" href="#"> Stays </a>
+        <a class="hover:underline text-white" href="#"> Flights </a>
+        <a class="hover:underline text-white" href="#"> Packages </a>
+        <a class="hover:underline font-bold text-white" href="#"> Sign Up </a>
+      </nav>
+    </header>
+    <main
+      class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
+    >
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        Book trip provider in Malang.
+      </h1>
+      <div class="w-full max-w-2xl">
+        <div
+          class="search-box px-3 py-2 w-full bg-white/20 backdrop-blur-lg rounded-[18px] flex items-center"
+        >
+          <i class="fas fa-search text-white-700 px-3"></i>
+          <input
+            class="flex-grow px-6 py-4 bg-transparent text-white-700 focus:outline-none"
+            placeholder="Search destinations, hotels, or anything in Malang"
+            type="text"
+          />
+          <button
+            class="bg-white text-blue-500 px-6 py-3 font-semibold rounded-full hover:bg-gray-50"
+          >
+            Search
+          </button>
+        </div>
+    </div>
+    </main>
+    <section class="relative py-20 bg-white">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-left mb-14">Top Destinations</h2>
+        <div class="carousel flex space-x-10 overflow-hidden">
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/nature-gunungsemeru.jpg" alt="Destination 1" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Nature</h3>
+                    <p class="text-blue-600 text-lg">Gunung Semeru</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/park-florawisata.jpg" alt="Destination 2" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Park</h3>
+                    <p class="text-blue-600 text-lg">Florawisata Santerra De Laponte</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/park-cobanrondo.jpg" alt="Destination 3" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Park</h3>
+                    <p class="text-blue-600 text-lg">Coban Rondo</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/park-batu.jpg" alt="Destination 4" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Park</h3>
+                    <p class="text-blue-600 text-lg">Batu Screet Zoo</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/nature-airterjun.jpg" alt="Destination 5" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Nature</h3>
+                    <p class="text-blue-600 text-lg">Air Terjun Coban Lanang</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-64 bg-white drop-shadow-md rounded-lg shadow-lg">
+                <img src="assets/img/park-jatim.jpg" alt="Destination 6" class="w-full h-40 object-cover rounded-t-lg">
+                <div class="p-4">
+                    <h3 class="text-sm font-semibold">Park</h3>
+                    <p class="text-blue-600 text-lg">Jatim Park</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.classList.add('active');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 3; 
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+    
+    </main>
+    <body class="flex items-center justify-center min-h-screen bg-gray-100">
+        <div class="relative w-full max-w-4xl mx-auto">
+            <img src="assets/img/travel expert.png" alt="A map with a camera, pencil, and travel items" class="w-full h-auto rounded-lg">
+            <div class="absolute inset-0 flex flex-col items-start justify-center bg-black bg-opacity-50 rounded-lg p-8">
+                <h1 class="text-4xl font-bold text-white mb-2">Plan your trip with travel expert</h1>
+                <p class="text-lg text-white mb-4">Our professional advisors can craft your perfect itinerary</p>
+                <button class="px-6 py-2 bg-white text-blue-600 font-semibold rounded-full">Consult now</button>
+            </div>
+        </div>
+    </body>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-[url(/assets/img/img-bg.png)] m-auto mb-20" style="background-size: cover; background-position: center; max-height: 260px; height: 260px;">
+      <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl px-4">
+       <div class="w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0 md:mr-8">
+      <img alt="Mobile app interface showing travel booking options" class="rounded-lg shadow-lg" height="600" src="assets/img/app.png" width="300"/>
+       </div>
+       <div class="w-full md:w-1/2 text-white text-center md:text-left">
+      <h1 class="text-4xl font-bold mb-4">
+       Your all-in-one Malang travel app.
+      </h1>
+      <p class="mb-6">
+       Book flights, hotels, trains &amp; rental cars anywhere in Malang in just seconds. Get real-time flight updates, travel info, exclusive deals, and 30% more Trip Coins only on the app!
+      </p>
+      <div class="flex justify-center md:justify-start mb-4">
+       <button class="bg-white text-black px-4 py-2 rounded-l-full" id="mobile-btn" onclick="showSection('mobile')">
+        Mobile
+       </button>
+       <button class="bg-gray-200 text-black px-4 py-2 rounded-r-full" id="email-btn" onclick="showSection('email')">
+        Email
+       </button>
+      </div>
+      <div class="flex justify-center md:justify-start mb-6" id="mobile-section">
+       <input class="px-4 py-2 rounded-l-full text-black w-2/3 md:w-1/2" placeholder="+91 Mobile number" type="text"/>
+       <button class="bg-white text-black px-4 py-2 rounded-r-full">
+        Search
+       </button>
+      </div>
+      <div class="flex justify-center md:justify-start mb-6" id="email-section" style="display: none;">
+       <input class="px-4 py-2 rounded-l-full text-black w-2/3 md:w-1/2" placeholder="Email address" type="email"/>
+       <button class="bg-white text-black px-4 py-2 rounded-r-full">
+        Search
+       </button>
+      </div>
+      <div class="flex justify-center md:justify-start space-x-4">
+       <a class="inline-block" href="#">
+        <img alt="Get it on Google Play" class="h-12" height="50" src="assets/img/image 23.png" width="150"/>
+       </a>
+       <a class="inline-block" href="#">
+        <img alt="Download on the App Store" class="h-12" height="50" src="assets/img/image 22.png" width="150"/>
+       </a>
+      </div>
+       </div>
+      </div>
+     </div>
+     <script>
+      function showSection(section) {
+           document.getElementById('mobile-section').style.display = section === 'mobile' ? 'block' : 'none';
+           document.getElementById('email-section').style.display = section === 'email' ? 'block' : 'none';
+           document.getElementById('mobile-btn').classList.toggle('bg-white', section === 'mobile');
+           document.getElementById('mobile-btn').classList.toggle('bg-gray-200', section !== 'mobile');
+           document.getElementById('email-btn').classList.toggle('bg-white', section === 'email');
+           document.getElementById('email-btn').classList.toggle('bg-gray-200', section !== 'email');
+         }
+     </script>
+     <footer class="bg-black flex flex-col items-center justify-between p-6 md:flex-row">
+      <div class="flex flex-col items-center md:items-start">
+          <img src="assets/img/logo.svg">
+      </div>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="mt-4 md:mt-0">
+          <p class="text-gray-400">&copy; 2025 Malang Trxvl.</p>
+      </div>
+      </footer>
+  </body>
+</html>
